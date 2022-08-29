@@ -1,69 +1,71 @@
-let dateTime = new Date();
+let dateTime = new Date()
 
-const watch = document.getElementById("watch");
-const calendar = document.getElementById("calendar");
+const watch = document.getElementById('watch')
+const calendar = document.getElementById('calendar')
+const container = document.getElementById('container')
 
 // Change time after every second
 
 setInterval(() => {
-  dateTime = new Date();
+    dateTime = new Date()
 
-  watch.innerText = `${dateTime.getHours()}:${dateTime.getMinutes()}:${dateTime.getSeconds()} `;
-  calendar.innerText = `${dateTime.getDay()}/${dateTime.getMonth()}/${dateTime.getFullYear()} `;
-}, 1);
+    watch.innerText = `${dateTime.getHours()}:${dateTime.getMinutes()}:${dateTime.getSeconds()} `
+    calendar.innerText = `${dateTime.getDay()}/${dateTime.getMonth()}/${dateTime.getFullYear()} `
+}, 1)
 
 // Settings
-const settingsContainer = document.getElementById("settings");
-const settingsButton = document.getElementById("settings-button");
+const settingsButton = document.getElementById('settings-button')
 
-settingsButton.addEventListener("click", () => {
-  changeVisibility(settingsContainer);
-});
+settingsButton.addEventListener('click', () => {
+    changeVisibility(document.getElementById('settings'))
+})
 
-const fontSelector = document.getElementById("font");
+const fontSelector = document.getElementById('font')
 
-fontSelector.addEventListener("change", (event) => {
-  setupFont(watch, event.target.value);
-  setupFont(calendar, event.target.value);
-});
+fontSelector.addEventListener('change', (event) => {
+    setupFont(container, event.target.value)
+    setupFont(settingsButton, event.target.value)
+})
 
 // Tools
 
 function changeFont(element, font) {
-  element.style.fontFamily = font;
+    element.style.fontFamily = font
 }
 
 function setupFont(element, font) {
-  switch (font) {
-    case "Silkscreen":
-      changeFont(element, "Silkscreen, cursive");
-      break;
-    case "OpenSans":
-      changeFont(element, "Open Sans, sans-serif");
-      break;
-    case "AlumniPinstripe":
-      changeFont(element, "Alumni Sans Pinstripe, sans-serif");
-      break;
-    case "AlumniCollegiate":
-      changeFont(element, "Alumni Sans Collegiate One, sans-serif");
-      break;
-    case "Roboto":
-      changeFont(element, "Roboto, sans-serif");
-      break;
-    case "Aboreto":
-      changeFont(element, "Aboreto, cursive");
-      break;
-    default:
-      changeFont(element, "Roboto, sans-serif");
-      break;
-  }
+    switch (font) {
+        case 'Silkscreen':
+            changeFont(element, 'Silkscreen, cursive')
+            break
+        case 'OpenSans':
+            changeFont(element, 'Open Sans, sans-serif')
+            break
+        case 'AlumniPinstripe':
+            changeFont(element, 'Alumni Sans Pinstripe, sans-serif')
+            break
+        case 'AlumniCollegiate':
+            changeFont(element, 'Alumni Sans Collegiate One, sans-serif')
+            break
+        case 'Roboto':
+            changeFont(element, 'Roboto, sans-serif')
+            break
+        case 'Aboreto':
+            changeFont(element, 'Aboreto, cursive')
+            break
+        default:
+            changeFont(element, 'Roboto, sans-serif')
+            break
+    }
 }
 
 function changeVisibility(element) {
-  const display = window.getComputedStyle(element).display;
+    const display = window.getComputedStyle(element).display
 
-  console.log(display);
-
-  if (display === "block") element.style.display = "none";
-  if (display === "none") element.style.display = "block";
+    if (display === 'block') element.style.display = 'none'
+    if (display === 'none') element.style.display = 'block'
 }
+
+// Startup
+
+changeFont(container, 'Roboto')
