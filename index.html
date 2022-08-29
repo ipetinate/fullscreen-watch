@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Watch</title>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Relógio online para usar em tela cheia" />
+    <!-- Links -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alumni+Sans+Collegiate+One&family=Alumni+Sans+Pinstripe&family=Open+Sans&family=Roboto&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="container" class="container">
+      <div id="info" class="info">
+        <p id="watch" class="watch"></p>
+        <p id="calendar" class="calendar"></p>
+      </div>
+
+      <div class="settings">
+        <div class="items">
+          <div>
+            <p>Configurações</p>
+          </div>
+
+          <div>
+            <label for="font">Fonte</label>
+            <select name="font" id="font" value="">
+              <option selected disabled>Selecione uma fonte</option>
+              <option value="OpenSans">OpenSans</option>
+              <option value="Silkscreen">Silkscreen</option>
+              <option value="Aboreto">Aboreto</option>
+              <option value="AlumniPinstripe">Alumni Pinstripe</option>
+              <option value="AlumniCollegiate">Alumni Collegiate</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button id="settings" class="settings-button">Configurações</button>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
