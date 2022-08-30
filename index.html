@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>FSW - FullScreen Watch</title>
-        <!-- Metas -->
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="Relógio online para usar em tela cheia"
-        />
-        <!-- Links -->
-        <link rel="stylesheet" href="styles/global.css" />
-        <link rel="stylesheet" href="styles/settings.css" />
-        <link rel="manifest" href="/public/manifest.json" />
-        <link
-            rel="shortcut icon"
-            href="/public/favicon.ico"
-            type="image/x-icon"
-        />
+  <head>
+    <title>FSW - FullScreen Watch</title>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Relógio online para usar em tela cheia" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="FSW" />
+    <!-- Links -->
+    <link rel="apple-touch-icon" href="/public/icon-192x192.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/public/icon-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/public/icon-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="/public/icon-192x192.png"
+    />
+    <link rel="apple-touch-startup-image" href="/public/icon-256x256.png" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alumni+Sans+Collegiate+One&family=Alumni+Sans+Pinstripe&family=Open+Sans&family=Roboto&family=Silkscreen&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/settings.css" />
+    <link rel="manifest" href="/public/manifest.json" />
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon" />
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alumni+Sans+Collegiate+One&family=Alumni+Sans+Pinstripe&family=Open+Sans&family=Roboto&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
 
-    <body>
-        <div id="container" class="container">
-            <div id="info" class="info">
-                <p id="watch" class="watch"></p>
-                <p id="calendar" class="calendar"></p>
-            </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
 
-            <div
-                id="settings"
-                class="settings animate__animated animate__slideInDown"
-            >
-                <div class="items">
-                    <div class="settings-header">
-                        <p>Configurações</p>
+  <body ontouchstart="">
+    <div id="container" class="container">
+      <div id="info" class="info">
+        <p id="watch" class="watch"></p>
+        <p id="calendar" class="calendar"></p>
+      </div>
 
-                        <button id="close-button" class="close-button">
-                            X
-                        </button>
-                    </div>
+      <div
+        id="settings"
+        class="settings animate__animated animate__slideInDown"
+      >
+        <div class="items">
+          <div class="settings-header">
+            <p>Configurações</p>
 
-                    <hr />
+            <button id="close-button" class="close-button">X</button>
+          </div>
 
-                    <!-- 
+          <hr />
+
+          <!-- 
                         <div class="fields">
                             <div class="field">
                                 <label for="combination">
@@ -83,40 +98,36 @@
                         </div> 
                     -->
 
-                    <div class="fields">
-                        <div class="field">
-                            <label for="combination">Combinação</label>
-                            <select name="combination" id="combination">
-                                <option value="full" selected>Tudo</option>
-                                <option value="watch">Relógio</option>
-                                <option value="calendar">Calendário</option>
-                            </select>
-                        </div>
-
-                        <div class="field">
-                            <label for="font">Fonte</label>
-                            <select name="font" id="font">
-                                <option value="Roboto" selected>Roboto</option>
-                                <option value="OpenSans">OpenSans</option>
-                                <option value="Silkscreen">Silkscreen</option>
-                                <option value="Aboreto">Aboreto</option>
-                                <option value="AlumniPinstripe">
-                                    Alumni Pinstripe
-                                </option>
-                                <option value="AlumniCollegiate">
-                                    Alumni Collegiate
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+          <div class="fields">
+            <div class="field">
+              <label for="combination">Combinação</label>
+              <select name="combination" id="combination">
+                <option value="full" selected>Tudo</option>
+                <option value="watch">Relógio</option>
+                <option value="calendar">Calendário</option>
+              </select>
             </div>
 
-            <button id="settings-button" class="settings-button">
-                Configurações
-            </button>
+            <div class="field">
+              <label for="font">Fonte</label>
+              <select name="font" id="font">
+                <option value="Roboto" selected>Roboto</option>
+                <option value="OpenSans">OpenSans</option>
+                <option value="Silkscreen">Silkscreen</option>
+                <option value="Aboreto">Aboreto</option>
+                <option value="AlumniPinstripe">Alumni Pinstripe</option>
+                <option value="AlumniCollegiate">Alumni Collegiate</option>
+              </select>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <script type="module" src="./index.js"></script>
-    </body>
+      <button id="settings-button" class="settings-button">
+        Configurações
+      </button>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>
